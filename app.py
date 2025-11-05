@@ -21,6 +21,8 @@ import pandas as pd
 import asyncio
 import numpy as np
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+
 
 
 
