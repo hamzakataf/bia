@@ -67,6 +67,8 @@ def get_latest_uploaded_file():
     if not files:
         raise HTTPException(status_code=400, detail="No uploaded CSV found.")
     return files[0]
+    
+app.mount("/static", StaticFiles(directory=os.getcwd()), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 def serve_index():
