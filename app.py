@@ -67,6 +67,10 @@ def get_latest_uploaded_file():
         raise HTTPException(status_code=400, detail="No uploaded CSV found.")
     return files[0]
 
+@app.get("/", response_class=HTMLResponse)
+def serve_index():
+    with open("index.html", "r", encoding="utf-8") as f:
+        return f.read()
 
 
 @app.post("/upload")
